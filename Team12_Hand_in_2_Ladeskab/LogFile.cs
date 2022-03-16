@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    internal class LogFile
+    class LogFile
     {
+
     }
 }
