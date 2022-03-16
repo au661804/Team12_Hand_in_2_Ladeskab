@@ -23,35 +23,41 @@ namespace Team12_Hand_in_2_Ladeskab
 
         }
 
-        public void ViewIsAvailable()
+        public void ViewAvailable()
         {
-            if (isConnected == true)
-            {
-                Console.WriteLine("Box is occupied");
-            }
-            else
-            {
-                Console.WriteLine("Box is available");
-            }
             
+                Console.WriteLine("Box is occupied");
+              Console.WriteLine("Connect phone");
+        }
+        public void ViewNotAvailable()
+        {
+            Console.WriteLine("Failed connecting.");
+
+
         }
 
         public void ViewReadID()
         {
             Console.WriteLine("Scan RFID");
-            if (readRFID == false)
-            {
-                Console.WriteLine("RFID failed");
-            }
-            else
-            {
-                Console.WriteLine("Door open");
-            }
-            
+
         }
 
+        public void ViewLockDoor()
+        {
+            Console.WriteLine("Door locked");
+        }
 
-        public void View()
-        {}
+        public void ViewFailRFID()
+        {
+            Console.WriteLine("RFID failed!");
+
+
+        }
+        public void ViewRemovePhone()
+        {
+            Console.WriteLine("Remove phone.");
+
+        }
+
     }
 }
