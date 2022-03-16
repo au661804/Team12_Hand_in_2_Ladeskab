@@ -7,7 +7,7 @@ namespace Team12_Hand_in_2_Ladeskab
     public class DoorEventArgs : EventArgs
     {
         // Value in mA (milliAmpere)
-        public bool isOpen { set; get; }
+        public bool isDoorOpen { set; get; }
     }
 
     public interface IDoor
