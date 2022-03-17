@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    public class Door : IDoor
+    public class Door
     {
         public event EventHandler<DoorEventArgs> doorStateEvent;
         public bool doorState { get; private set; }
