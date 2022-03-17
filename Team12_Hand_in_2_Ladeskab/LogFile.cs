@@ -18,7 +18,8 @@ namespace Team12_Hand_in_2_Ladeskab
 
         public void LogDoorLocked(int id)
         {
-            int lines = id;
+            int id  = id;
+            string 
 
           //  await File.WriteAllLinesAsync("WriteLines.txt", id);
         }

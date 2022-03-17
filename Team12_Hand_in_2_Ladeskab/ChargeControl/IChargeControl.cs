@@ -1,8 +1,10 @@
 ﻿using System;
 
-public class Class1
+public interface IChargeControl
 {
-	public Class1()
-	{
-	}
+    void StartCharge();
+
+    void StopCharge();
+
+    bool Connected();
 }

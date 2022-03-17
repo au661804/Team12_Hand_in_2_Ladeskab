@@ -22,11 +22,11 @@ namespace Team12_Hand_in_2_Ladeskab
         {
             if (doorState == false )
             {
-                display.ViewIsAvailable();
+                display.ViewAvailable();
                 doorState = true;
             
             
-            OnNewDoor(new DoorEventArgs() { isDoorOpen = doorState });
+            OnDoorOpen(new DoorEventArgs() { isDoorOpen = doorState });
 
             }
 
@@ -40,7 +40,7 @@ namespace Team12_Hand_in_2_Ladeskab
                 display.ViewReadID();
             doorState = false;
            
-            OnNewDoor(new DoorEventArgs() {isDoorOpen = doorState});
+            OnDoorClosed(new DoorEventArgs() {isDoorOpen = doorState});
 
             }
 
@@ -59,7 +59,12 @@ namespace Team12_Hand_in_2_Ladeskab
         }
 
 
-        private void OnNewDoor(DoorEventArgs e)
+        private void OnDoorOpen(DoorEventArgs e)
+        {
+            doorStateEvent?.Invoke(this, e);
+        }
+
+        private void OnDoorClosed(DoorEventArgs e)
         {
             doorStateEvent?.Invoke(this, e);
         }
