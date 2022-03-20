@@ -9,9 +9,9 @@
     public interface IRFIDReader
     {
         // Event triggered on new current value
-        event EventHandler<RFIDEventArgs> RFIDHandleEvent;
+        event EventHandler<RFIDEventArgs> RFIDHandleEvent; //Connectionpoint for observers
 
-        void RFIDDetected(int id);
+        void RFIDValue(int id);
     }
 
 

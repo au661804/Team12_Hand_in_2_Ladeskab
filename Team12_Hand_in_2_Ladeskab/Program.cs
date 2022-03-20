@@ -8,8 +8,8 @@ class Program
         // Assemble your system here from all the classes
 
         bool finish = false;
-        IDoor _door;
-        IRFIDReader rfidReader;
+        IDoor _door = null;
+        IRFIDReader rfidReader = new rfidReader();
 
 
         do
@@ -26,11 +26,11 @@ class Program
                     break;
 
                 case 'O':
-                    _door.;
+                    _door.openDoor();
                     break;
 
                 case 'C':
-                    _door.OnDoorClose();
+                    _door.closeDoor();
                     break;
 
                 case 'R':
@@ -38,7 +38,7 @@ class Program
                     string idString = System.Console.ReadLine();
 
                     int id = Convert.ToInt32(idString);
-                    rfidReader.RFIDDetected(id);
+                    rfidReader.RFIDValue(id);
                     break;
 
                 default:

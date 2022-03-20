@@ -17,18 +17,24 @@ namespace Team12_Hand_in_2_Ladeskab
 
         // Her mangler flere member variable
         private LadeskabState _state;
-        private IChargeControl _charger;
+        private IChargeControl _charger = new ChargeControl(new USBCharger());
         private int _oldId;
         private IDoor _door;
 
+        
         private string logFile = "logfile.txt"; // Navnet på systemets log-fil
 
         // Her mangler constructor
 
-        public StationControl(IRFIDReader rfidReader)
+        public StationControl(IRFIDReader rfidReader )
         {
-            rfidReader.RFIDHandleEvent
-            
+            rfidReader.RFIDHandleEvent += RfidDetected;
+
+
+        }
+
+        private void HandleRFIDEvent(object s, RFIDEventArgs e)
+        {
 
         }
 
@@ -39,7 +45,7 @@ namespace Team12_Hand_in_2_Ladeskab
             {
                 case LadeskabState.Available:
                     // Check for ladeforbindelse
-                    if (_charger.Connected)
+                    if (_charger.Connected())
                     {
                         _door.LockDoor();
                         _charger.StartCharge();
@@ -87,6 +93,20 @@ namespace Team12_Hand_in_2_Ladeskab
         }
 
         // Her mangler de andre trigger handlere
+
+        private void Door()
+        {
+            switch (_state)
+            {
+                case LadeskabState.DoorOpen:
+                    if (_door.doorState)
+                    {
+
+                    }
+
+                    break;
+            }
+        }
     }
 }
-}
+
