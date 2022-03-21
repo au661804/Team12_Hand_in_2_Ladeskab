@@ -5,7 +5,7 @@ using System.Threading.Channels;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    public class Display:IDisplay
+    public class Display : IDisplay
     {
         private bool isConnected = false;
         
