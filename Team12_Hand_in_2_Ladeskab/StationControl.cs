@@ -45,10 +45,11 @@ namespace Team12_Hand_in_2_Ladeskab
             switch (e.isDoorOpen)
             {
                 case true:
-                    _display.
+                    _display.ViewConnectPhone();
                     break;
                 case false:
-                    display.
+                    _display.ViewReadID();
+                    break;
             }
         }
 
@@ -67,18 +68,18 @@ namespace Team12_Hand_in_2_Ladeskab
                         {
                             _door.LockDoor();
                             _charger.StartCharge();
-                            _oldId = id;
+                            _oldId = e._ID;
                             using (var writer = File.AppendText(logFile))
                             {
-                                writer.WriteLine(DateTime.Now + ": Skab låst med RFID: {0}", id);
+                                writer.WriteLine(DateTime.Now + ": Box locked with RFID: {0}", e._ID);
                             }
 
-                            Console.WriteLine("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
+                            _display.ViewUnlock();
                             _state = LadeskabState.Locked;
                         }
                         else
                         {
-                            Console.WriteLine("Din telefon er ikke ordentlig tilsluttet. Prøv igen.");
+                            _display.ViewFailedConnection();
                         }
 
                         break;
@@ -89,21 +90,21 @@ namespace Team12_Hand_in_2_Ladeskab
 
                     case LadeskabState.Locked:
                         // Check for correct ID
-                        if (id == _oldId)
+                        if (e._ID == _oldId)
                         {
                             _charger.StopCharge();
                             _door.UnlockDoor();
                             using (var writer = File.AppendText(logFile))
                             {
-                                writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", id);
+                                writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", e._ID);
                             }
 
-                            Console.WriteLine("Tag din telefon ud af skabet og luk døren");
+                            _display.ViewRemovePhone();
                             _state = LadeskabState.Available;
                         }
                         else
                         {
-                            Console.WriteLine("Forkert RFID tag");
+                            _display.ViewFailRFID();
                         }
 
                         break;

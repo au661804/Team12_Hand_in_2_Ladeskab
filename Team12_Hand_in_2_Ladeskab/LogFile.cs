@@ -13,14 +13,12 @@ namespace Team12_Hand_in_2_Ladeskab
 
         public LogFile(int LogID)
         {
-           id.RFIDdetected(LogID);
+            
         }
 
         public void LogDoorLocked(int id)
         {
-            int id  = id;
-            string 
-
+            
           //  await File.WriteAllLinesAsync("WriteLines.txt", id);
         }
 

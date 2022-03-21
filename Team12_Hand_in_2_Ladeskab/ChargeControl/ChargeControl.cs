@@ -6,6 +6,11 @@ namespace Team12_Hand_in_2_Ladeskab
 {
     class ChargeControl :IChargeControl
     {
+        private IDisplay _display;
+
+        private IUsbCharger _charger;
+
+
         
 
         public ChargeControl(IUsbCharger charger)
@@ -15,7 +20,11 @@ namespace Team12_Hand_in_2_Ladeskab
 
         private void HandleChargeChangedEvent(object sender, CurrentEventArgs e)
         {
-            
+            switch (e.Current)
+            {
+
+
+            }
         }
 
         public void StartCharge()
