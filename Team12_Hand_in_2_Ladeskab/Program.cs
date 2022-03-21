@@ -26,11 +26,11 @@ class Program
                     break;
 
                 case 'O':
-                    _door.openDoor();
+                    _door.OnDoorOpen();
                     break;
 
                 case 'C':
-                    _door.closeDoor();
+                    _door.OnDoorClosed();
                     break;
 
                 case 'R':
