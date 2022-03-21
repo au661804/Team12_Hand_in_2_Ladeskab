@@ -5,10 +5,10 @@ using System.Threading.Channels;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    class Display
+    public class Display:IDisplay
     {
         private bool isConnected = false;
-        private bool readRFID = false;
+        
 
         public void ViewCharge(int battery)
         {

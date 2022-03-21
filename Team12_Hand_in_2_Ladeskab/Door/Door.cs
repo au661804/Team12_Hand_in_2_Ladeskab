@@ -7,66 +7,56 @@ namespace Team12_Hand_in_2_Ladeskab
 {
     public class Door
     {
-        public event EventHandler<DoorEventArgs> doorStateEvent;
-        public bool doorState { get; private set; }
-       
-        private Display display;
+        public event EventHandler<DoorEventArgs> DoorStateHandleEvent;
+        public bool doorState { get; private set; } 
+        public bool lockState { get; private set; } 
+
 
         public Door()
         {
             doorState = false;
-
+            lockState = false;
         }
 
-        public void openDoor()
+        public void SetDoorState(bool newDoorState)
         {
-            if (doorState == false )
+            if (doorState != newDoorState)
             {
-                display.ViewAvailable();
-                doorState = true;
-            
-            
-            OnDoorOpen(new DoorEventArgs() { isDoorOpen = doorState });
-
-            }
-
-
-        }
-
-        public void closeDoor()
-        {
-            if (doorState == true)
-            {
-                display.ViewReadID();
-            doorState = false;
-           
-            OnDoorClosed(new DoorEventArgs() {isDoorOpen = doorState});
+                doorState = newDoorState;
+                OnDoorChanged(new DoorEventArgs() { isDoorOpen = newDoorState });
 
             }
 
         }
 
-        public void LockDoor()
+
+        public void SetLockDoor(bool newLock)
         {
-            display.ViewLockDoor();
+            if (lockState != newLock)
+            {
+                lockState = newLock;
+                OnDoorChanged(new DoorEventArgs() { isDoorLocked = newLock });
+
+            }
 
 
         }
 
         public void UnlockDoor()
         {
-            display.ViewReadID();
+           SetLockDoor(false);
         }
 
-
-        private void OnDoorOpen(DoorEventArgs e)
+        public void LockDoor()
         {
-            doorStateEvent?.Invoke(this, e);
+            SetLockDoor(true);
         }
 
-        private void OnDoorClosed(DoorEventArgs e)
+        private void OnDoorChanged(DoorEventArgs e)
         {
-            doorStateEvent?.Invoke(this, e);
+            DoorStateHandleEvent?.Invoke(this, e);
         }
+
+       
     }
 }
