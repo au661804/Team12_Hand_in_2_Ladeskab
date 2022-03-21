@@ -4,8 +4,25 @@ using System.Text;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    public class IDisplay
+    public interface IDisplay
     {
-        public 
-    }
+         void ViewCharge(int battery);
+
+
+         void ViewAvailable();
+
+         void ViewNotAvailable();
+
+
+         void ViewReadID();
+
+
+         void ViewLockDoor();
+
+         void ViewFailRFID();
+         void ViewRemovePhone();
+
+
+    };
 }
+

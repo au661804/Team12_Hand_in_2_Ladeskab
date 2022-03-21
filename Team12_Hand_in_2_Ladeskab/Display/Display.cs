@@ -7,7 +7,6 @@ namespace Team12_Hand_in_2_Ladeskab
 {
     public class Display : IDisplay
     {
-        private bool isConnected = false;
         
 
         public void ViewCharge(int battery)
@@ -59,5 +58,6 @@ namespace Team12_Hand_in_2_Ladeskab
 
         }
 
+        
     }
 }

@@ -27,5 +27,9 @@ namespace Team12_Hand_in_2_Ladeskab
         void LockDoor();
         void UnlockDoor();
 
+        void OnDoorOpen();
+        void OnDoorClosed();
+
+
     }
 }

@@ -26,9 +26,7 @@ namespace Team12_Hand_in_2_Ladeskab
                 OnDoorChanged(new DoorEventArgs() { isDoorOpen = newDoorState });
 
             }
-
         }
-
 
         public void SetLockDoor(bool newLock)
         {
@@ -38,8 +36,6 @@ namespace Team12_Hand_in_2_Ladeskab
                 OnDoorChanged(new DoorEventArgs() { isDoorLocked = newLock });
 
             }
-
-
         }
 
         public void UnlockDoor()
@@ -57,6 +53,16 @@ namespace Team12_Hand_in_2_Ladeskab
             DoorStateHandleEvent?.Invoke(this, e);
         }
 
-       
+        public void OnDoorOpen()
+        {
+            SetDoorState(true);
+
+        }
+
+        public void OnDoorClose()
+        {
+            SetDoorState(false);
+        }
+
     }
 }
