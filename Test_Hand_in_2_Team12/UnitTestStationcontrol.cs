@@ -61,22 +61,21 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        [TestCase(1)]
-        [TestCase(33)]
-        [TestCase(0)]
-        public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
-        {
-            _door.lockState = false;
-            _door.doorState = false;
+        //[TestCase(1)]
+        //[TestCase(33)]
+        //[TestCase(0)]
+        //public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
+        //{
+        //    _door.lockState = false;
+        //    _door.doorState = false;
             
             
-            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
+        //    _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
 
-            _rFIDReader.RFIDValue(id);
+           
+        //    _display.Received(1).ViewRemovePhone();
 
-            _display.Received(1).ViewRemovePhone();
-
-        }
+        //}
         [TestCase(1)]
         [TestCase(33)]
         [TestCase(0)]
