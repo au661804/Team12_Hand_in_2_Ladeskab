@@ -20,14 +20,14 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        [TestCase(2)]
-        [TestCase(22)]
-        [TestCase(222)]
-        public void Test1(int id)
-        {
-            _uut.RFIDValue(id);
-            _uut.RFIDHandleEvent += (_uut, RFIDEventArgs) => id );
+        //[TestCase(2)]
+        //[TestCase(22)]
+        //[TestCase(222)]
+        //public void Test1(int id)
+        //{
+        //    _uut.RFIDValue(id);
+        //    _uut.RFIDHandleEvent += (_uut, RFIDEventArgs) => id );
 
-            Assert.That(RFIDEventArgs, Is.GreaterThan(4));
-        }
+        //    Assert.That(RFIDEventArgs, Is.GreaterThan(4));
+        //}
 }
