@@ -26,5 +26,7 @@ namespace Team12_Hand_in_2_Ladeskab
             void StartCharge();
             // Stop charging
             void StopCharge();
+            
         }
+
 }
