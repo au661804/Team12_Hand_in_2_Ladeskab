@@ -2,15 +2,25 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Test_Hand_in_2_Team12;
+using Team12_Hand_in_2_Ladeskab;
+using NSubstitute;
 
 namespace Test_Hand_in_2_Team12
 {
      class UnitTestChargeControl
     {
+        IDisplay _display;
+        IChargeControl uut;
+        IUsbCharger _usbCharger;
+
+
         [SetUp]
         public void Setup()
         {
+            _display = Substitute.For<IDisplay>();
+            _usbCharger = Substitute.For<IUsbCharger>();
+            uut = new ChargeControl(_display, _usbCharger);
+            
         }
 
         [Test]
@@ -23,9 +33,5 @@ namespace Test_Hand_in_2_Team12
 
     }
 
-    public class FakeDisplay: IDisplay
-    {
-
-
-    }
+    
 }
