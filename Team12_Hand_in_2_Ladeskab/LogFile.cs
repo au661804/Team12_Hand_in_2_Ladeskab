@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    class LogFile
+    public class LogFile
     {
         private rfidReader id;
         string docPath=Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //virker måske

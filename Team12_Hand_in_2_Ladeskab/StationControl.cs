@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-     class StationControl
+     public class StationControl
     {
         // Enum med tilstande ("states") svarende til tilstandsdiagrammet for klassen
         private enum LadeskabState

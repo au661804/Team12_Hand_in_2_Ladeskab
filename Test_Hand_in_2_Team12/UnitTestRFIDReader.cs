@@ -7,7 +7,7 @@ using Team12_Hand_in_2_Ladeskab;
 
 namespace Test_Hand_in_2_Team12
 {
-     class UnitTestRFIDReader
+    class UnitTestRFIDReader
     {
         IDisplay _display;
         IChargeControl uut;
@@ -19,7 +19,7 @@ namespace Test_Hand_in_2_Team12
         {
             _display = Substitute.For<IDisplay>();
             _usbCharger = Substitute.For<IUsbCharger>();
-            uut = new ChargeControl(_display, _usbCharger);
+            uut = new ChargeControl(_usbCharger, _display);
 
         }
 
@@ -29,3 +29,4 @@ namespace Test_Hand_in_2_Team12
             Assert.Pass();
         }
     }
+}

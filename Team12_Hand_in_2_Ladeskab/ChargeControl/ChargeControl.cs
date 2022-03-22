@@ -1,5 +1,4 @@
-﻿using NSubstitute;
-using NUnit.Framework;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +6,7 @@ using Team12_Hand_in_2_Ladeskab;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    class ChargeControl :IChargeControl
+    public class ChargeControl :IChargeControl
     {
         private IDisplay _display;
         private IUsbCharger _charger;

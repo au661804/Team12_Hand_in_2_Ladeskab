@@ -19,7 +19,7 @@ namespace Test_Hand_in_2_Team12
         {
             _display = Substitute.For<IDisplay>();
             _usbCharger = Substitute.For<IUsbCharger>();
-            uut = new ChargeControl(_display, _usbCharger);
+            uut = new ChargeControl(_usbCharger, _display);
             
         }
 
