@@ -11,6 +11,7 @@ namespace Team12_Hand_in_2_Ladeskab
         private IUsbCharger _charger;
 
 
+
         
 
         public ChargeControl(IUsbCharger charger)

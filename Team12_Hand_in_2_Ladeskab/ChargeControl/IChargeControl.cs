@@ -1,10 +1,15 @@
 ﻿using System;
 
-public interface IChargeControl
+namespace Team12_Hand_in_2_Ladeskab
 {
-    void StartCharge();
+    public interface IChargeControl
+    {
+        event EventHandler<CurrentEventArgs> USBEvent;
 
-    void StopCharge();
+        void StartCharge();
 
-    bool Connected();
+        void StopCharge();
+
+        bool Connected(); //skal det være getset?
+    }
 }
