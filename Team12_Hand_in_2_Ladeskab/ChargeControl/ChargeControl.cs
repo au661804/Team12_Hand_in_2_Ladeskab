@@ -7,39 +7,70 @@ namespace Team12_Hand_in_2_Ladeskab
     class ChargeControl :IChargeControl
     {
         private IDisplay _display;
-
         private IUsbCharger _charger;
+        public event EventHandler<CurrentEventArgs> USBEvent;
+        double CurrentNow { get; set; }
+        double StopLadestroem = 5;
+        double NormalLadestroem = 500;
 
+        public bool Connected { get;set; }
 
-        
-
-        public ChargeControl(IUsbCharger charger)
+        private enum ChargerState
         {
-            charger.CurrentValueEvent += HandleChargeChangedEvent;
+            Charging,
+            DoneCharging         
+        };
+
+        public ChargeControl(IUsbCharger charger, IDisplay display)
+        {
+            _charger = charger;
+            _display = display;
+            _charger.CurrentValueEvent += HandleChargeChangedEvent;
         }
 
         private void HandleChargeChangedEvent(object sender, CurrentEventArgs e)
         {
-            switch (e.Current)
+            CurrentNow = e.Current;
+
+            switch (CurrentNow) //hvorfor skal vi have en switch?
             {
+                case <= 0:
+                    break;
+                case <= StopLadestroem:
+                    {
+                        _display.ViewDoneCharging();
+                    }
+                    break;
+                case <= NormalLadestroem:
+                    {
+                        _display.ViewCharging();
+                    }
+                case > NormalLadestroem:
+                    {
+                        _display.ViewFailedConnection();
+                    }
 
 
             }
         }
+        
 
         public void StartCharge()
         {
-            throw new NotImplementedException();
+            _charger.StartCharge();
         }
+       
 
         public void StopCharge()
         {
-            throw new NotImplementedException();
+            _charger.StopCharge();
         }
 
-        public bool Connected()
+        public bool PhoneConnected()
         {
-            throw new NotImplementedException();
+            return _charger.Connected;
         }
+
+       
     }
 }

@@ -16,25 +16,25 @@ class Program
         do
         {
             string input;
-            System.Console.WriteLine("Indtast E, O, C, R: ");
+            System.Console.WriteLine("Indtast e, o, c, r: ");
             input = Console.ReadLine();
             if (string.IsNullOrEmpty(input)) break;
 
             switch (input[0])
             {
-                case 'E':
+                case 'e':
                     finish = true;
                     break;
 
-                case 'O':
+                case 'o':
                     _door.OnDoorOpen();
                     break;
 
-                case 'C':
+                case 'c':
                     _door.OnDoorClosed();
                     break;
 
-                case 'R':
+                case 'r':
                     System.Console.WriteLine("Indtast RFID id: ");
                     string idString = System.Console.ReadLine();
 

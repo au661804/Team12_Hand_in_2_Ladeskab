@@ -6,7 +6,8 @@ namespace Team12_Hand_in_2_Ladeskab
 {
     public interface IDisplay
     {
-         void ViewCharge(int battery);
+         void ViewCharging();
+        void ViewDoneCharging();
 
 
          void ViewConnectPhone();

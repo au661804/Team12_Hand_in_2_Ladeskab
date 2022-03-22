@@ -9,10 +9,15 @@ namespace Team12_Hand_in_2_Ladeskab
     {
         
 
-        public void ViewCharge(int battery)
+        public void ViewCharging()
         {
-            Console.WriteLine(battery + "%");
+            Console.WriteLine("Charging...");
            
+        }
+        public void ViewDoneCharging()
+        {
+            Console.WriteLine("Done charging. Remove phone. ");
+
         }
 
         public void ViewConnectPhone()
@@ -21,7 +26,7 @@ namespace Team12_Hand_in_2_Ladeskab
         }
         public void ViewFailedConnection()
         {
-            Console.WriteLine("Failed connecting.");
+            Console.WriteLine("Failed connecting. Charging is stopped.");
 
 
         }
