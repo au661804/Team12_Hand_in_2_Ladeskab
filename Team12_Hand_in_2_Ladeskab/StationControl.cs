@@ -69,13 +69,10 @@ namespace Team12_Hand_in_2_Ladeskab
                             _door.LockDoor();
                             _charger.StartCharge();
                             _oldId = e._ID;
-                            using (var writer = File.AppendText(logFile))
-                            {
-                                writer.WriteLine(DateTime.Now + ": Box locked with RFID: {0}", e._ID);
-                            }
-
-                            _display.ViewUnlock();
+                           
+                            _display.ViewLockDoor();
                             _state = LadeskabState.Locked;
+                            _log.LogDoorLocked(_oldId);
                         }
                         else
                         {
@@ -94,10 +91,7 @@ namespace Team12_Hand_in_2_Ladeskab
                         {
                             _charger.StopCharge();
                             _door.UnlockDoor();
-                            using (var writer = File.AppendText(logFile))
-                            {
-                                writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", e._ID);
-                            }
+                            _log.LogDoorUnlocked(_oldId);
 
                             _display.ViewRemovePhone();
                             _state = LadeskabState.Available;

@@ -8,22 +8,31 @@ namespace Team12_Hand_in_2_Ladeskab
     class LogFile
     {
         private rfidReader id;
+        string docPath=Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //virker måske
 
-        //FileStream output = new FileStream()
+        public string log { get; set; }
 
-        public LogFile(int LogID)
-        {
-            
-        }
 
+     
         public void LogDoorLocked(int id)
         {
-            
-          //  await File.WriteAllLinesAsync("WriteLines.txt", id);
+            log = DateTime.Now + ": Box locked with RFID: " + id;
+            WriteToFile(log);
+
         }
 
         public void LogDoorUnlocked(int id)
         {
+            log = DateTime.Now + ": Box unlocked with RFID: " + id;
+            WriteToFile(log);
+
+        }
+        public void WriteToFile(string line)
+        {
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "LogFile.txt")))
+            {
+                outputFile.WriteLine(line);
+            }
 
         }
     }
