@@ -29,5 +29,5 @@ namespace Test_Hand_in_2_Team12
         //    _uut.RFIDHandleEvent += (_uut, RFIDEventArgs) => id );
 
         //    Assert.That(RFIDEventArgs, Is.GreaterThan(4));
-        //}
+        }
 }
