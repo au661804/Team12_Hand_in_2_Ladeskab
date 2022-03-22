@@ -89,6 +89,20 @@ namespace Test_Hand_in_2_Team12
             //_display.Received(1).ViewLockDoor();
             _chargeControl.Received(1).StartCharge();
 
+        }
+
+        [TestCase(1)]
+        [TestCase(33)]
+        [TestCase(0)]
+        public void RFIDEventHasBeenCalled__LogID_is_Called(int id)
+        {
+            _door.lockState = false;
+            _door.doorState = false;
+            _chargeControl.Connected = true;
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+
+            //_display.Received(1).ViewLockDoor();
+            _logFile.Received(1).LogDoorLocked(id);
 
         }
     }
