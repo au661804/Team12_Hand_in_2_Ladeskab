@@ -40,7 +40,7 @@ namespace Team12_Hand_in_2_Ladeskab
 
         public void ViewLockDoor()
         {
-            Console.WriteLine("Door locked");
+            Console.WriteLine("Door locked. Start Charging.");
         }
 
         public void ViewFailRFID()
