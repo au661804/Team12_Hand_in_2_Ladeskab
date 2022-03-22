@@ -10,6 +10,8 @@ class Program
         bool finish = false;
         IDoor _door = new Door();
         IRFIDReader rfidReader = new rfidReader();
+        
+
 
 
 
