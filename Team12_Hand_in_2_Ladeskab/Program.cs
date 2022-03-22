@@ -12,12 +12,13 @@ class Program
         IRFIDReader rfidReader = new rfidReader();
 
 
+
         do
         {
             string input;
             System.Console.WriteLine("Indtast E, O, C, R: ");
             input = Console.ReadLine();
-            if (string.IsNullOrEmpty(input)) continue;
+            if (string.IsNullOrEmpty(input)) break;
 
             switch (input[0])
             {
