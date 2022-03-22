@@ -31,17 +31,18 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        [TestCase (false)]
+        [TestCase(false)]
         public void DoorEventHasBeenCalled_DoorClosed(bool door)
         {
-            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs { isDoorOpen = door });
+            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
             _display.Received(1).ViewReadID();
         }
+
         [TestCase(true)]
         public void DoorEventHasBeenCalled_DoorOpen(bool door)
         {
-            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs { isDoorOpen = door });
+            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
             _display.Received(1).ViewConnectPhone();
         }
@@ -51,20 +52,45 @@ namespace Test_Hand_in_2_Team12
         [TestCase(0)]
         public void RFIDEventHasBeenCalled_DoorLocked(int id)
         {
-            
-                _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+            _door.lockState = false;
+            _door.doorState = false;
+            _chargeControl.Connected = true;
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
 
-
-               // _display.Received(1).ViewLockDoor();
-            _door.Received(1).UnlockDoor();
+            _display.Received(1).ViewLockDoor();
 
         }
-        [TestCase(true)]
-        public void DoorEventHasBeenCalled_DoorUnlocked(bool door)
-        {
-            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs { isDoorOpen = door });
 
-            _display.Received(1).ViewConnectPhone();
+        [TestCase(1)]
+        [TestCase(33)]
+        [TestCase(0)]
+        public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
+        {
+            _door.lockState = false;
+            _door.doorState = false;
+            
+            
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
+
+            _rFIDReader.RFIDValue(id);
+
+            _display.Received(1).ViewRemovePhone();
+
+        }
+        [TestCase(1)]
+        [TestCase(33)]
+        [TestCase(0)]
+        public void RFIDEventHasBeenCalled__StartCharge_is_Called(int id)
+        {
+            _door.lockState = false;
+            _door.doorState = false;
+            _chargeControl.Connected = true;
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+
+            //_display.Received(1).ViewLockDoor();
+            _chargeControl.Received(1).StartCharge();
+
+
         }
     }
 }
