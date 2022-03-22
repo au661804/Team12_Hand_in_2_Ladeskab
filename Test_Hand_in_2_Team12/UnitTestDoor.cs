@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Test_Hand_in_2_Team12
 {
-    internal class UnitTestDoor
+    public class UnitTestDoor
     {
+        //arrange
+
     }
 }
