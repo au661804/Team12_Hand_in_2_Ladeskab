@@ -64,7 +64,7 @@ namespace Team12_Hand_in_2_Ladeskab
                 {
                     case LadeskabState.Available:
                         // Check for ladeforbindelse
-                        if (_charger.Connected())
+                        if (_charger.Connected)
                         {
                             _door.LockDoor();
                             _charger.StartCharge();
