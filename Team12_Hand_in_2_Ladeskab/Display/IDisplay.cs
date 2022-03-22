@@ -9,15 +9,17 @@ namespace Team12_Hand_in_2_Ladeskab
          void ViewCharge(int battery);
 
 
-         void ViewAvailable();
+         void ViewConnectPhone();
 
-         void ViewNotAvailable();
+         void ViewFailedConnection();
 
 
          void ViewReadID();
 
 
          void ViewLockDoor();
+
+         void ViewUnlock();
 
          void ViewFailRFID();
          void ViewRemovePhone();

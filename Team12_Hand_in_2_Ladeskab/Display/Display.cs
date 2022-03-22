@@ -11,24 +11,15 @@ namespace Team12_Hand_in_2_Ladeskab
 
         public void ViewCharge(int battery)
         {
-            if (isConnected == true)
-            {
-                Console.WriteLine(battery + "%");
-            }
-            else
-            {
-                Console.WriteLine("Error connecting phone - try again");
-            }
-
+            Console.WriteLine(battery + "%");
+           
         }
 
-        public void ViewAvailable()
+        public void ViewConnectPhone()
         {
-            
-                Console.WriteLine("Box is occupied");
-              Console.WriteLine("Connect phone");
+            Console.WriteLine("Connect phone");
         }
-        public void ViewNotAvailable()
+        public void ViewFailedConnection()
         {
             Console.WriteLine("Failed connecting.");
 
@@ -38,6 +29,12 @@ namespace Team12_Hand_in_2_Ladeskab
         public void ViewReadID()
         {
             Console.WriteLine("Scan RFID");
+
+        }
+
+        public void ViewUnlock()
+        {
+            Console.WriteLine("Box is locked. Scan RFID to unlock.");
 
         }
 
@@ -54,7 +51,7 @@ namespace Team12_Hand_in_2_Ladeskab
         }
         public void ViewRemovePhone()
         {
-            Console.WriteLine("Remove phone.");
+            Console.WriteLine("Take phone and close the door.");
 
         }
 
