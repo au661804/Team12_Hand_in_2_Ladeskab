@@ -10,6 +10,11 @@ class Program
         bool finish = false;
         IDoor _door = new Door();
         IRFIDReader rfidReader = new rfidReader();
+        USBCharger _charger = new USBCharger();
+        IDisplay _display = new Display();
+        IChargeControl _chargecontrol = new ChargeControl(_charger, _display);
+
+
         System.Console.WriteLine("Options: e(Exit), o(Open door), c (Close door), p(Plug phone) r(Read RFID): \n Open door. ");
 
 
@@ -37,7 +42,8 @@ class Program
                     break;
                 case 'p':
                 case 'P':
-                    _door.OnDoorOpen();
+
+                    _charger.SimulateConnected(true);
                     Console.WriteLine("Close door.");
                     break;
 

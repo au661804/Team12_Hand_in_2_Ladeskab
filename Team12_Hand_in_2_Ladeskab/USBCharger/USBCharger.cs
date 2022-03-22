@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    class USBCharger : IUsbCharger
+    public class USBCharger : IUsbCharger
     {
         // Constants
         private const double MaxCurrent = 500.0; // mA
