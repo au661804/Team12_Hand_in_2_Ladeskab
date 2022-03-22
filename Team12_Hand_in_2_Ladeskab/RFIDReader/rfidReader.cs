@@ -22,6 +22,8 @@ namespace Team12_Hand_in_2_Ladeskab
             RFIDHandleEvent?.Invoke(this, e);
         }
 
+       
+        
 
     }
 }

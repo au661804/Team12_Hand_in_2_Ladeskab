@@ -12,6 +12,7 @@ namespace Team12_Hand_in_2_Ladeskab
         double CurrentNow { get; set; }
         double StopLadestroem = 5;
         double NormalLadestroem = 500;
+        double Kortslutning = 501;
 
         public bool Connected { get;set; }
 
@@ -36,20 +37,21 @@ namespace Team12_Hand_in_2_Ladeskab
             {
                 case <= 0:
                     break;
-                case <= StopLadestroem:
+                case <= 5: //StopLadestroem
                     {
                         _display.ViewDoneCharging();
                     }
                     break;
-                case <= NormalLadestroem:
+                case <= 500: //NormalLadestroem
                     {
                         _display.ViewCharging();
                     }
-                case > NormalLadestroem:
-                    {
+                    break;
+                case >= 501: //Kortslutning
+                    
                         _display.ViewFailedConnection();
-                    }
-
+                    
+                   break;
 
             }
         }
