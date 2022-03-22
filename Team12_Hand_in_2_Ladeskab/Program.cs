@@ -8,7 +8,7 @@ class Program
         // Assemble your system here from all the classes
 
         bool finish = false;
-        IDoor _door = null;
+        IDoor _door = new Door();
         IRFIDReader rfidReader = new rfidReader();
 
 

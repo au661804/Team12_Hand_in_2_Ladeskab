@@ -21,11 +21,9 @@ namespace Team12_Hand_in_2_Ladeskab
         bool doorState { get; set; }
         bool lockState { get; set; }
 
-        void openDoor();
-
-       
-        void LockDoor();
+     
         void UnlockDoor();
+        void LockDoor();
 
         void OnDoorOpen();
         void OnDoorClosed();

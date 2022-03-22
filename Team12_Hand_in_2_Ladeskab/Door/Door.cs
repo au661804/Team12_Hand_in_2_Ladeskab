@@ -5,13 +5,13 @@ using System.Xml.Serialization;
 
 namespace Team12_Hand_in_2_Ladeskab
 {
-    public class Door
+    public class Door : IDoor
     {
         public event EventHandler<DoorEventArgs> DoorStateHandleEvent;
-        public bool doorState { get; private set; } 
-        public bool lockState { get; private set; } 
-
-
+        public bool doorState { get; set; } 
+        public bool lockState { get; set; }
+        
+   
         public Door()
         {
             doorState = false;
@@ -59,10 +59,11 @@ namespace Team12_Hand_in_2_Ladeskab
 
         }
 
-        public void OnDoorClose()
+        public void OnDoorClosed()
         {
             SetDoorState(false);
         }
 
+        
     }
 }
