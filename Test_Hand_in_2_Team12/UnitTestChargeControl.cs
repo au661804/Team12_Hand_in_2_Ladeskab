@@ -4,7 +4,26 @@ using System.Text;
 
 namespace Test_Hand_in_2_Team12
 {
-    internal class UnitTestChargeControl
+     class UnitTestChargeControl
     {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
+
+
+
+    }
+
+    public class FakeDisplay: IDisplay
+    {
+
+
     }
 }

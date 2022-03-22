@@ -4,7 +4,17 @@ using System.Text;
 
 namespace Test_Hand_in_2_Team12
 {
-    internal class UnitTestRFIDReader
+     class UnitTestRFIDReader
     {
+        [SetUp]
+        public void Setup()
+        {
+        }
+
+        [Test]
+        public void Test1()
+        {
+            Assert.Pass();
+        }
     }
 }
