@@ -10,6 +10,6 @@ namespace Team12_Hand_in_2_Ladeskab
 
         void StopCharge();
 
-        bool Connected(); //skal det være getset?
+        bool Connected { get; set; }
     }
 }

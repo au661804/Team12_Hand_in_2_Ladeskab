@@ -1,5 +1,7 @@
 ﻿using System;
 
+namespace Team12_Hand_in_2_Ladeskab
+{
 
     public class RFIDEventArgs : EventArgs
     {
@@ -13,5 +15,6 @@
 
         void RFIDValue(int id);
     }
+}
 
 
