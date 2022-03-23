@@ -23,7 +23,7 @@ namespace Test_Hand_in_2_Team12
         }
 
         [Test]
-        public void DoorIsUnlocked_test()
+        public void lockstate_is_false_after_running_unlockdoor_test()
         {
             uut.UnlockDoor();
             Assert.That(uut.lockState, Is.False);
@@ -31,14 +31,14 @@ namespace Test_Hand_in_2_Team12
         }
 
         [Test]
-        public void IsDoorLocked_test()
+        public void Lockdoor_Is_true_after_running_Lockdoor_test()
         {
             uut.LockDoor();
             Assert.That(uut.lockState, Is.True);
         }
      
         [Test]
-        public void isDoorChanged_test() //ændre navn
+        public void Asserting_event_is_not_null_after_OnOpenDoor_Is_called_test() //virker ikke
         {
             uut.OnDoorOpen();
 
@@ -50,10 +50,9 @@ namespace Test_Hand_in_2_Team12
             });
 
         }
-       
 
         [Test]
-        public void isDoorOpen()
+        public void Doorstate_is_true_when_OnDoorOpen_is_Called_test()
         {
             uut.OnDoorOpen();
             Assert.That(uut.doorState, Is.True);
@@ -61,7 +60,7 @@ namespace Test_Hand_in_2_Team12
         }
        
         [Test]
-        public void isDoorClosed_test()
+        public void Doorstate_is_false_when_Ondoorclosed_Is_Called()
         {
             uut.OnDoorClosed();
             Assert.That(uut.doorState, Is.False);
