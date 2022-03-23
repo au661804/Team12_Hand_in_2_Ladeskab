@@ -54,9 +54,6 @@ namespace Test_Hand_in_2_Team12
         
         
 
-
-
-
     }
 
     
