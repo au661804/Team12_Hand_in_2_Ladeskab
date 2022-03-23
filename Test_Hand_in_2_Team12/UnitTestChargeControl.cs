@@ -56,6 +56,23 @@ namespace Test_Hand_in_2_Team12
             Assert.That(uut.PhoneConnected, Is.True);
         }
 
+        [TestCase(1)]
+        [TestCase(3)]
+        [TestCase(5)]
+        public void FullyChargedPhone_DisplayShowDoneCharging(int telefonOpladt)
+        {
+            _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = telefonOpladt });
+            _display.Received(1).ViewDoneCharging();
+        }
+
+        [TestCase(-5)]
+        [TestCase(100)]
+        [TestCase(6)]
+        public void FullyChargedPhone_DisplayShowDoneCharging_withOutsideValues(int telefonOpladt)
+        {
+            _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = telefonOpladt });
+            _display.Received(0).ViewDoneCharging();
+        }
 
 
     }
