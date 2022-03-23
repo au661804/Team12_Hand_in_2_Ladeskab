@@ -30,7 +30,7 @@ namespace Test_Hand_in_2_Team12
             Assert.That(_usbCharger.StartCharge, Is.True);
 
         }
-       
+
         [Test]
         public void StopCharge_Test()
         {
