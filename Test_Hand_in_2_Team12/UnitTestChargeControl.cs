@@ -41,20 +41,20 @@ namespace Test_Hand_in_2_Team12
         //    _usbCharger.Received(1).StopCharge();
         //}
 
-        }
+        
 
-        [Test]
-        public void StopCharge_Test()
-        {
-            uut.StopCharge();
-            Assert.That(uut.StopCharge, Is.True);
-        }
-        [Test]
-        public void PhoneConnected_test()
-        {
-            uut.PhoneConnected();
-            Assert.That(uut.PhoneConnected, Is.True);
-        }
+        //[Test]
+        //public void StopCharge_Test()
+        //{
+        //    uut.StopCharge();
+        //    Assert.That(uut.StopCharge, Is.True);
+        //}
+        //[Test]
+        //public void PhoneConnected_test()
+        //{
+        //    uut.PhoneConnected();
+        //    Assert.That(uut.PhoneConnected, Is.True);
+        //}
 
 
 

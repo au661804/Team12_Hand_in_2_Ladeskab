@@ -20,10 +20,10 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        [Test]
-        public void Test1()
-        {
+        //[Test]
+        //public void Test1()
+        //{
             
-        }
+        //}
     }
 }
