@@ -36,7 +36,7 @@ namespace Test_Hand_in_2_Team12
             uut.LockDoor();
             Assert.That(uut.lockState, Is.True);
         }
-     
+
         //[Test]
         //public void Asserting_event_is_not_null_after_OnOpenDoor_Is_called_test() //virker ikke
         //{

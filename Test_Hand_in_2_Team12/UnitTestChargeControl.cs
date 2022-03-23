@@ -22,18 +22,34 @@ namespace Test_Hand_in_2_Team12
         }
 
 
-        //[Test]
-        //public void startCharge_Test()
-        //{
-        //   uut.StartCharge();
-
         [Test]
-        public void StopCharge_Test()
+        public void startCharge_received_once_by_ChargeControl()
+        {
+            uut.StartCharge();
+            _usbCharger.Received(1).StartCharge();
+            
+        }
+        
+        [Test]
+        public void StopCharge_received_once_by_ChargeControl()
         {
             uut.StopCharge();
-            Assert.That(uut.StopCharge, Is.True);
+            _usbCharger.Received(1).StopCharge();
         }
+
         [Test]
+
+        public void zero_StopCharge_received_StartCharge_sent()
+        {
+            uut.StartCharge();
+            _usbCharger.Received(0).StopCharge();
+        }
+        public void zero_StartCharge_received_StopCharge_sent()
+        {
+            uut.StopCharge();
+            _usbCharger.Received(0).StartCharge();
+        }
+
         public void PhoneConnected_test()
         {
             uut.PhoneConnected();
