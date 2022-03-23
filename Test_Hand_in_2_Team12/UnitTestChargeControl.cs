@@ -10,7 +10,6 @@ namespace Test_Hand_in_2_Team12
      public class UnitTestChargeControl
     {
         IDisplay _display;
-        StationControl _station;
         ChargeControl uut;
         IUsbCharger _usbCharger;
 
@@ -19,30 +18,42 @@ namespace Test_Hand_in_2_Team12
         {
             _display = Substitute.For<IDisplay>();
             _usbCharger = Substitute.For<IUsbCharger>();
-            _station = Substitute.For<StationControl>();
-            uut = new ChargeControl(_usbCharger, _display);
+             uut = new ChargeControl(_usbCharger, _display);
         }
 
         [Test]
-        public void startCharge_Test()
+        public void startCharge_sent_once_Test()
         {
             uut.StartCharge();
-            Assert.That(_usbCharger.StartCharge, Is.True);
-
+            _usbCharger.Received(1).StartCharge();
+            
         }
 
         [Test]
-        public void StopCharge_Test()
+        public void StopCharge_sent_once_startCharget()
         {
             uut.StopCharge();
-            Assert.That(uut.StopCharge, Is.True);
+            _usbCharger.Received(1).StopCharge();
+           
+
         }
         [Test]
-        public void PhoneConnected_test()
+        public void StartCharge_sent_twice()
         {
-            uut.PhoneConnected();
-            Assert.That(uut.PhoneConnected, Is.True);
+            uut.StartCharge();
+            uut.StartCharge();
+            _usbCharger.Received(2).StartCharge();
         }
+        [Test]
+        public void StopCharge_sent_twice()
+        {
+            uut.StopCharge();
+            uut.StopCharge();
+            _usbCharger.Received(2).StopCharge();
+        }
+        
+        
+
 
 
 
