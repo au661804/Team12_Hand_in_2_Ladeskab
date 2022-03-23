@@ -23,26 +23,31 @@ namespace Test_Hand_in_2_Team12
             uut = new ChargeControl(_usbCharger, _display);
         }
 
-        [Test]
-        public void startCharge_Test()
-        {
-            uut.StartCharge();
-            Assert.That(_usbCharger.StartCharge, Is.True);
 
-        }
-       
-        [Test]
-        public void StopCharge_Test()
-        {
-            uut.StopCharge();
-            Assert.That(uut.StopCharge, Is.True);
-        }
-        [Test]
-        public void PhoneConnected_test()
-        {
-            uut.PhoneConnected();
-            Assert.That(uut.PhoneConnected, Is.True);
-        }
+        //[Test]
+        //public void startCharge_Test()
+        //{
+        //   uut.StartCharge();
+
+
+        //    _usbCharger.Received(1).StartCharge();
+
+        //}
+
+        //[Test]
+        //public void StopCharge_Test()
+        //{
+        //    uut.StopCharge();
+        //    _usbCharger.Received(1).StopCharge();
+        //}
+
+        //[Test]
+        //public void PhoneConnected_test()
+        //{
+        //    uut.PhoneConnected();
+            
+        //    Assert.That(_usbCharger.Connected, Is.True);
+        //}
 
 
 
