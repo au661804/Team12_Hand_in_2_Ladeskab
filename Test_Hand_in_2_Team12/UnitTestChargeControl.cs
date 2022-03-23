@@ -7,26 +7,41 @@ using NSubstitute;
 
 namespace Test_Hand_in_2_Team12
 {
-     class UnitTestChargeControl
+     public class UnitTestChargeControl
     {
         IDisplay _display;
-        IChargeControl uut;
+        StationControl _station;
+        ChargeControl uut;
         IUsbCharger _usbCharger;
-
 
         [SetUp]
         public void Setup()
         {
             _display = Substitute.For<IDisplay>();
             _usbCharger = Substitute.For<IUsbCharger>();
+            _station = Substitute.For<StationControl>();
             uut = new ChargeControl(_usbCharger, _display);
-            
         }
 
         [Test]
-        public void Test1()
+        public void startCharge_Test()
         {
-            Assert.Pass();
+            uut.StartCharge();
+            Assert.That(_usbCharger.StartCharge, Is.True);
+
+        }
+       
+        [Test]
+        public void StopCharge_Test()
+        {
+            uut.StopCharge();
+            Assert.That(uut.StopCharge, Is.True);
+        }
+        [Test]
+        public void PhoneConnected_test()
+        {
+            uut.PhoneConnected();
+            Assert.That(uut.PhoneConnected, Is.True);
         }
 
 
