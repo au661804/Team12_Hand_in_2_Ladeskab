@@ -9,24 +9,25 @@ namespace Test_Hand_in_2_Team12
 {
     class UnitTestRFIDReader
     {
-        IDisplay _display;
-        IChargeControl uut;
-        IUsbCharger _usbCharger;
+        private IRFIDReader _uut;
+
 
 
         [SetUp]
         public void Setup()
         {
-            _display = Substitute.For<IDisplay>();
-            _usbCharger = Substitute.For<IUsbCharger>();
-            uut = new ChargeControl(_usbCharger, _display);
+            _uut = new rfidReader();
 
         }
 
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
+        //[TestCase(2)]
+        //[TestCase(22)]
+        //[TestCase(222)]
+        //public void Test1(int id)
+        //{
+        //    _uut.RFIDValue(id);
+        //    _uut.RFIDHandleEvent += (_uut, RFIDEventArgs) => id );
+
+        //    Assert.That(RFIDEventArgs, Is.GreaterThan(4));
         }
-    }
 }
