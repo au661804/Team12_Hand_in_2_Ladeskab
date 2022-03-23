@@ -1,9 +1,9 @@
 ﻿using System;
 using Team12_Hand_in_2_Ladeskab;
 
-class Program
+public class Program
 {
-    static void Main(string[] args)
+    public static void Main()
     {
         // Assemble your system here from all the classes
 
@@ -20,7 +20,7 @@ class Program
 
         do
         {
-            string input; 
+            string input;
             
             
             input = Console.ReadLine();
