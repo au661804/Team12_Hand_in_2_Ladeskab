@@ -61,27 +61,26 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        //HJÆLP_-_______________________________________________________________
-        //[TestCase(1,1)]
-        //[TestCase(33,33)]
-        //[TestCase(0,0)]
-        //public void RFIDEventHasBeenCalled_DoorUnLocked(int id, int oldId)
+        //[Test]
+        //public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
         //{
-        //    _door.lockState = false;
-        //    _door.doorState = false;
-        //    _logFile.LogDoorLocked(oldId);
+            
+        //    _chargeControl.Connected.Returns(true);
+        //    _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+        //    _door.lockState.Returns(true);
 
-           
+
         //    _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
-            
-             
-        //        _display.Received(1).ViewRemovePhone();
-            
-        //}_____________________________________________________________________
 
 
-        [TestCase(1)]
+        //    _door.Received(1).UnlockDoor();
+
+        //}
+        
+
+
+       [TestCase(1)]
         [TestCase(33)]
         [TestCase(0)]
         public void RFIDEventHasBeenCalled__StartCharge_is_Called(int id)
