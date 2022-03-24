@@ -104,7 +104,7 @@ namespace Test_Hand_in_2_Team12
             _display.Received(0).ViewFailedConnection();
         }
         [Test]
-        public void IsConnectedWhenChargingStarts_ExpectedTrue()
+        public void IsConnectedWhenChargingStarts_ExpTrue()
         {
             _usbCharger.Connected.Returns(true);
             uut.StartCharge();
@@ -112,6 +112,8 @@ namespace Test_Hand_in_2_Team12
 
             Assert.That(uut.PhoneConnected, Is.EqualTo(true));
         }
+        
+        //mangler teste property
 
 
 
