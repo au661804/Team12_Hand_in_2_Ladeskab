@@ -31,6 +31,7 @@ namespace Test_Hand_in_2_Team12
 
         }
 
+        
         [TestCase(false)]
         public void DoorEventHasBeenCalled_DoorClosed(bool door)
         {
@@ -50,8 +51,6 @@ namespace Test_Hand_in_2_Team12
             _display.Received(1).ViewConnectPhone();
             
         }
-
-
 
         [TestCase(1)]
         [TestCase(33)]
