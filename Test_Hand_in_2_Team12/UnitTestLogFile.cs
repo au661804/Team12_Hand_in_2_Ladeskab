@@ -10,19 +10,12 @@ namespace Test_Hand_in_2_Team12
 {
     class UnitTestLogFile
     {
-        LogFile uut;
+        //LogFile uut;
 
-        [SetUp]
-        public void Setup()
-        {
-            uut = new LogFile();
-        }
-
-        
-        //public void Test1()
+        //[SetUp]
+        //public void Setup()
         //{
-        //    uut.WriteToFile("");
-
+        //    uut = new LogFile();
         //}
     } 
 }
