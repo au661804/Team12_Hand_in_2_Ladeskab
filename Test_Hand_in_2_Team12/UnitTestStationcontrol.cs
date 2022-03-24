@@ -155,6 +155,18 @@ namespace Test_Hand_in_2_Team12
             
         }
 
+        //Her forventes ikke at ske noget, da den skal breake
+        [TestCase(true, true)]
+        [TestCase(false, true)]
+        [TestCase(true, false)]
+        public void RFIDEventHasBeenCalled__lockstate_doorstate(bool door, bool _lock)
+        {
+            _door.lockState = _lock;
+            _door.doorState = door;
+            
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = 1 });
+        }
         
+
     }
 }

@@ -60,7 +60,7 @@ public class Program
                     string idString = System.Console.ReadLine();
                     int id = Convert.ToInt32(idString);
                     rfidReader.RFIDValue(id);
-                    
+
                     break;
 
                 default:

@@ -64,8 +64,7 @@ namespace Test_Hand_in_2_Team12
         public void Connected_test()
         {
             uut.Connected = true;
-            //uut.PhoneConnected();
-
+            
             Assert.That(uut.Connected, Is.True);
         }
 
