@@ -20,14 +20,14 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-        [TestCase("Charging..." )]
-        public void Test1(string line)
-        {
-            _uut.ViewCharging();
+        //[TestCase("Charging..." )]
+        //public void Test1(string line)
+        //{
+        //    _uut.ViewCharging();
             
-            //Assert.That(_uut.ViewCharging, Is.EqualTo(line));
-            _uut.Received(1).ViewCharging();
+        //    //Assert.That(_uut.ViewCharging, Is.EqualTo(line));
+        //    _uut.Received(1).ViewCharging();
 
-        }
+        //}
     }
 }

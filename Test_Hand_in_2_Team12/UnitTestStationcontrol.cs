@@ -8,7 +8,7 @@ using Ladeskab_Class_Library;
 
 namespace Test_Hand_in_2_Team12
 {
-    public class UnitTestStatioinControl
+    public class UnitTestStationControl
     {
         IDisplay _display;
         StationControl _uut;
@@ -34,9 +34,12 @@ namespace Test_Hand_in_2_Team12
         [TestCase(false)]
         public void DoorEventHasBeenCalled_DoorClosed(bool door)
         {
+            _chargeControl.Connected = true;
+
             _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
             _display.Received(1).ViewReadID();
+
         }
 
         [TestCase(true)]
@@ -44,8 +47,8 @@ namespace Test_Hand_in_2_Team12
         {
             _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
-            //_display.Received(1).ViewConnectPhone();
-            _door.Received(1).OnDoorOpen();
+            _display.Received(1).ViewConnectPhone();
+            
         }
 
         [TestCase(1)]
@@ -59,7 +62,7 @@ namespace Test_Hand_in_2_Team12
 
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
 
-            _door.Received(1).OnDoorClosed();
+            _door.Received(1).LockDoor();
             
 
         }
