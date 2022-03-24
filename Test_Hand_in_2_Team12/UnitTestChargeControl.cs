@@ -117,7 +117,11 @@ namespace Test_Hand_in_2_Team12
             Assert.That(uut.PhoneConnected, Is.EqualTo(true));
         }
         
-        //mangler teste property
+        [Test]
+        public void testingproperty()
+        {
+
+        }
 
 
 
