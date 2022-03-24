@@ -7,23 +7,21 @@ using Team12_Hand_in_2_Ladeskab;
 
 namespace Test_Hand_in_2_Team12
 {
-     class UnitTestLogFile
+    class UnitTestLogFile
     {
-        StationControl _stationControl;
-        Door _uut;
+        LogFile uut;
 
         [SetUp]
         public void Setup()
         {
-            _stationControl=Substitute.For<StationControl>();
-            _uut = new Door();
-
+            uut = new LogFile();
         }
 
-        //[Test]
+        
         //public void Test1()
         //{
-            
+        //    uut.WriteToFile("");
+
         //}
-    }
+    } 
 }
