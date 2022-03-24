@@ -3,12 +3,12 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Team12_Hand_in_2_Ladeskab;
+using Ladeskab_Class_Library;
 
 
 namespace Test_Hand_in_2_Team12
 {
-    public class Tests
+    public class UnitTestStationControl
     {
         IDisplay _display;
         StationControl _uut;
@@ -34,9 +34,12 @@ namespace Test_Hand_in_2_Team12
         [TestCase(false)]
         public void DoorEventHasBeenCalled_DoorClosed(bool door)
         {
+            _chargeControl.Connected = true;
+
             _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
             _display.Received(1).ViewReadID();
+
         }
 
         [TestCase(true)]
@@ -45,6 +48,7 @@ namespace Test_Hand_in_2_Team12
             _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs {isDoorOpen = door});
 
             _display.Received(1).ViewConnectPhone();
+            
         }
 
         [TestCase(1)]
@@ -55,9 +59,11 @@ namespace Test_Hand_in_2_Team12
             _door.lockState = false;
             _door.doorState = false;
             _chargeControl.Connected = true;
+
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs {_ID = id});
 
-            _display.Received(1).ViewLockDoor();
+            _door.Received(1).LockDoor();
+            
 
         }
 

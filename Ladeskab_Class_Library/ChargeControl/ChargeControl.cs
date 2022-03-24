@@ -2,9 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Team12_Hand_in_2_Ladeskab;
 
-namespace Team12_Hand_in_2_Ladeskab
+namespace Ladeskab_Class_Library
 {
     public class ChargeControl :IChargeControl
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Team12_Hand_in_2_Ladeskab;
+using Ladeskab_Class_Library;
 using NSubstitute;
 
 namespace Test_Hand_in_2_Team12

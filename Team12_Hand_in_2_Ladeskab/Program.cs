@@ -1,5 +1,5 @@
 ﻿using System;
-using Team12_Hand_in_2_Ladeskab;
+using Ladeskab_Class_Library;
 
 public class Program
 {
