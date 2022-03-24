@@ -51,6 +51,8 @@ namespace Test_Hand_in_2_Team12
             
         }
 
+
+
         [TestCase(1)]
         [TestCase(33)]
         [TestCase(0)]
@@ -67,17 +69,20 @@ namespace Test_Hand_in_2_Team12
 
         }
 
-       [Test]
-        //public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
-        //{
+       //[Test]
+       // public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
+       // {
 
-        //    _chargeControl.Connected.Returns(true);
-        //    _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
-        //    _door.lockState.Returns(true);
+       //     _chargeControl.Connected = true;
+       //     _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+       //     _door.lockState.Returns(true);
 
-        //    _door.Received(1).UnlockDoor();
+       //     _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
-        //}
+
+       //     _door.Received(1).UnlockDoor();
+
+       // }
 
 
 
