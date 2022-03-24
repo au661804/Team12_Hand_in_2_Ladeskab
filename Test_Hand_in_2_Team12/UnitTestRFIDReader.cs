@@ -13,9 +13,6 @@ namespace Test_Hand_in_2_Team12
         private IRFIDReader _uut;
         private RFIDEventArgs _eventArgs;
 
-
-
-
         [SetUp]
         public void Setup()
         {
@@ -42,8 +39,6 @@ namespace Test_Hand_in_2_Team12
         public void oneEventRaised_expOneReceivedNotNull()
         {
             _uut.RFIDValue(23);
-            
-
             Assert.That(_eventArgs._ID, Is.Not.Null);     
         }
 
@@ -54,18 +49,5 @@ namespace Test_Hand_in_2_Team12
             Assert.That(_eventArgs._ID,Is.EqualTo(23));
            
         }
-
-        [Test]
-        public void oneEventRaised_expOneReceivedNotCorrect()
-        {
-            _uut.RFIDValue(23);
-            Assert.That(_eventArgs._ID, Is.Not.EqualTo(11));
-
-        }
-
-
-
-
-
     }
 }
