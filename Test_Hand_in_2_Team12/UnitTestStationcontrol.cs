@@ -75,17 +75,30 @@ namespace Test_Hand_in_2_Team12
         public void RFIDEventHasBeenCalled_DoorUnLocked(int id)
         {
             _door.doorState.Returns(false);
+            _door.lockState.Returns(false);
             _chargeControl.Connected = true;
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
-            _door.lockState.Returns(false);
+            _door.lockState.Returns(true);
 
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
             _door.Received(1).UnlockDoor();
 
         }
+        
+        [TestCase(1,2)]
+        public void RFIDEventHasBeenCalled_IDnotOldId(int id, int newid)
+        {
+            _door.doorState.Returns(false);
+            _chargeControl.Connected = true;
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
+            _door.lockState.Returns(false);
 
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = newid });
 
+            _display.Received(1).ViewFailRFID();
+
+        }
 
         [TestCase(1)]
         [TestCase(33)]
