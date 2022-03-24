@@ -34,7 +34,7 @@ namespace Ladeskab_Class_Library
             _charger = chargeControl;
             _log = logFile;
             
-            rfidReader.RFIDHandleEvent += RfidDetected;
+            _reader.RFIDHandleEvent += RfidDetected;
             door.DoorStateHandleEvent += DoorStateHandleEvent;
 
         }
