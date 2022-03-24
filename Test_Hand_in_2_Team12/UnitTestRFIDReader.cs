@@ -39,13 +39,14 @@ namespace Test_Hand_in_2_Team12
         }
 
         [Test]
-        public void oneEventRaised_expOneReceived()
+        public void oneEventRaised_expOneReceivedNotNull()
         {
             _uut.RFIDValue(23);
             
 
             Assert.That(_eventArgs._ID, Is.Not.Null);     
         }
+
         [Test]
         public void oneEventRaised_expOneReceived1()
         {
@@ -54,16 +55,17 @@ namespace Test_Hand_in_2_Team12
            
         }
 
+        [Test]
+        public void oneEventRaised_expOneReceivedNotCorrect()
+        {
+            _uut.RFIDValue(23);
+            Assert.That(_eventArgs._ID, Is.Not.EqualTo(11));
+
+        }
 
 
-        //}
 
-        //[TestCase(2)]
-        //[TestCase(22)]
-        //[TestCase(222)]
-        //public void Test1(int id)
-        //{
 
-        
+
     }
 }
