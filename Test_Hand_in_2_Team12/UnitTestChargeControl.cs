@@ -63,9 +63,10 @@ namespace Test_Hand_in_2_Team12
         [Test]
         public void Connected_test()
         {
-            uut.PhoneConnected().Returns(true);
+            uut.Connected = true;
+            //uut.PhoneConnected();
 
-            Assert.That(_usbCharger.Connected, Is.True);
+            Assert.That(uut.Connected, Is.True);
         }
 
         [TestCase(1)]
@@ -85,6 +86,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = fullyCharged });
             _display.Received(0).ViewDoneCharging();
         }
+       
         [TestCase(6)]
         [TestCase(150)]
         [TestCase(500)]    
@@ -93,6 +95,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = PhoneCharging });
             _display.Received(1).ViewCharging();
         }
+       
         [TestCase(5)]
         [TestCase(501)]
         [TestCase(-10)]
@@ -101,6 +104,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = PhoneCharging });
             _display.Received(0).ViewCharging();
         }
+        
         [TestCase(501)]
         [TestCase(1000)]
         public void ShortCircuit_withCorrectValues(int ShortCircuit)
@@ -108,6 +112,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = ShortCircuit });
             _display.Received(1).ViewFailedConnection();
         }
+       
         [TestCase(500)]
         [TestCase(-10)]
         public void ShortCircuit_withInCorrectValues(int ShortCircuit)
@@ -115,6 +120,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = ShortCircuit });
             _display.Received(0).ViewFailedConnection();
         }
+       
         [Test]
         public void IsConnectedWhenChargingStarts_ExpTrue()
         {
@@ -125,7 +131,7 @@ namespace Test_Hand_in_2_Team12
             Assert.That(uut.PhoneConnected, Is.EqualTo(true));
         }
         
-        //mangler teste property
+        
 
 
 
