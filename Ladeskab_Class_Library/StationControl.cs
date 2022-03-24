@@ -24,8 +24,6 @@ namespace Ladeskab_Class_Library
         private LogFile _log;
 
         
-        private string logFile = "logfile.txt"; // Navnet på systemets log-fil
-        
         public StationControl(IRFIDReader rfidReader, IDoor door, IDisplay display, IChargeControl chargeControl, LogFile logFile )
         {
             _reader = rfidReader;

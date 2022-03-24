@@ -60,6 +60,14 @@ namespace Test_Hand_in_2_Team12
             Assert.That(uut.PhoneConnected(), Is.True);
         }
 
+        [Test]
+        public void Connected_test()
+        {
+            uut.PhoneConnected().Returns(true);
+
+            Assert.That(_usbCharger.Connected, Is.True);
+        }
+
         [TestCase(1)]
         [TestCase(3)]
         [TestCase(5)]
