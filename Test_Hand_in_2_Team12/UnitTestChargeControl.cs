@@ -44,16 +44,20 @@ namespace Test_Hand_in_2_Team12
             uut.StartCharge();
             _usbCharger.Received(0).StopCharge();
         }
+
+        [Test]
         public void zero_StartCharge_received_StopCharge_sent()
         {
             uut.StopCharge();
             _usbCharger.Received(0).StartCharge();
         }
 
+        [Test]
         public void PhoneConnected_test()
         {
-            uut.PhoneConnected();
-            Assert.That(uut.PhoneConnected, Is.True);
+            _usbCharger.Connected.Returns(true);
+            
+            Assert.That(uut.PhoneConnected(), Is.True);
         }
 
         [TestCase(1)]
