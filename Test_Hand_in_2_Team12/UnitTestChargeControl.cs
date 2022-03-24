@@ -68,7 +68,7 @@ namespace Test_Hand_in_2_Team12
         [TestCase(-5)]
         [TestCase(100)]
         [TestCase(6)]
-        public void FullyChargedPhone_DisplayShowDoneCharging_withOutsideValues(int fullyCharged)
+        public void FullyChargedPhone_DisplayShowDoneCharging_withIncorrectValues(int fullyCharged)
         {
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = fullyCharged });
             _display.Received(0).ViewDoneCharging();
@@ -103,6 +103,7 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = ShortCircuit });
             _display.Received(0).ViewFailedConnection();
         }
+
 
 
     }

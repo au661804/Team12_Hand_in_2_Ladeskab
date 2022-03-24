@@ -27,7 +27,6 @@ namespace Test_Hand_in_2_Team12
         {
             uut.UnlockDoor();
             Assert.That(uut.lockState, Is.False);
-            
         }
 
         [Test]
