@@ -107,6 +107,15 @@ namespace Test_Hand_in_2_Team12
             _usbCharger.CurrentValueEvent += Raise.EventWith(new CurrentEventArgs() { Current = ShortCircuit });
             _display.Received(0).ViewFailedConnection();
         }
+        [Test]
+        public void IsConnectedWhenChargingStarts_ExpectedTrue()
+        {
+            _usbCharger.Connected.Returns(true);
+            uut.StartCharge();
+            _usbCharger.Received(1).StartCharge();
+
+            Assert.That(uut.PhoneConnected, Is.EqualTo(true));
+        }
 
 
 
