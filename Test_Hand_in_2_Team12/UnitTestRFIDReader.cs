@@ -18,16 +18,14 @@ namespace Test_Hand_in_2_Team12
         public void Setup()
         {
             _uut = new rfidReader();
-
         }
+        //}
 
         //[TestCase(2)]
         //[TestCase(22)]
         //[TestCase(222)]
         //public void Test1(int id)
         //{
-            
-
 
         //    Assert.That(RFIDEventArgs, Is.GreaterThan(4));
 
