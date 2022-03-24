@@ -78,8 +78,7 @@ namespace Test_Hand_in_2_Team12
             _door.lockState.Returns(false);
             _chargeControl.Connected = true;
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
-            _door.lockState.Returns(true);
-
+            
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
             _door.Received(1).UnlockDoor();
