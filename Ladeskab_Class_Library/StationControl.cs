@@ -45,9 +45,11 @@ namespace Ladeskab_Class_Library
             {
                 case true:
                     _display.ViewConnectPhone();
+                    _state = LadeskabState.DoorOpen; 
                     break;
                 case false:
                     _display.ViewReadID();
+                    _state = LadeskabState.Available;
                     break;
             }
         }

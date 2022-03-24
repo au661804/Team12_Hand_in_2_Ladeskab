@@ -138,9 +138,23 @@ namespace Test_Hand_in_2_Team12
             _chargeControl.Connected = true;
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
-            //_display.Received(1).ViewLockDoor();
+            
             _logFile.Received(1).LogDoorLocked(id);
 
+        }
+
+        //Her forventes ikke at ske noget, da den skal breake
+        [Test]
+        public void RFIDEventHasBeenCalled__LadeskabState_DoorOpen()
+        {
+            _door.lockState = false;
+            _door.doorState = false;
+            
+            _door.DoorStateHandleEvent += Raise.EventWith(new DoorEventArgs { isDoorOpen = true });
+
+            _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = 1 });
+            
+            
         }
     }
 }
