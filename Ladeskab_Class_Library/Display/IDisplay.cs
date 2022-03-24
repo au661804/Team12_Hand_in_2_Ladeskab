@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Team12_Hand_in_2_Ladeskab
+namespace Ladeskab_Class_Library
 {
     public interface IDisplay
     {

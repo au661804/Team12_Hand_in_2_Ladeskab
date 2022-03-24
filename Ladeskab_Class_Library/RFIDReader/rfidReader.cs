@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Team12_Hand_in_2_Ladeskab
+namespace Ladeskab_Class_Library
 {
     public class rfidReader : IRFIDReader
     {
@@ -12,6 +12,7 @@ namespace Team12_Hand_in_2_Ladeskab
         public void RFIDValue(int id)
         {
             
+            
             OnRFIDHandle(new RFIDEventArgs(){_ID = id});
             
 
@@ -19,7 +20,7 @@ namespace Team12_Hand_in_2_Ladeskab
 
         private void OnRFIDHandle(RFIDEventArgs e)
         {
-            RFIDHandleEvent?.Invoke(this, e);
+            RFIDHandleEvent?.Invoke(this, e); 
         }
 
        

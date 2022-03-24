@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Team12_Hand_in_2_Ladeskab
+namespace Ladeskab_Class_Library
 {
      public class StationControl
     {
@@ -15,7 +15,6 @@ namespace Team12_Hand_in_2_Ladeskab
             DoorOpen
         };
 
-        // Her mangler flere member variable
         private LadeskabState _state;
         private IChargeControl _charger;
         private int _oldId;
@@ -70,9 +69,10 @@ namespace Team12_Hand_in_2_Ladeskab
                             _charger.StartCharge();
                             _oldId = e._ID;
                            
-                            _display.ViewLockDoor();
+                            
                             _state = LadeskabState.Locked;
                             _log.LogDoorLocked(_oldId);
+                            _display.ViewLockDoor();
                         }
                         else
                         {
