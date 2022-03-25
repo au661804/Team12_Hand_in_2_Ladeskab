@@ -106,6 +106,7 @@ namespace Test_Hand_in_2_Team12
             _door.lockState = false;
             _door.doorState = false;
             _chargeControl.Connected = true;
+
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id});
 
             _chargeControl.Received(1).StartCharge();
@@ -120,6 +121,7 @@ namespace Test_Hand_in_2_Team12
             _door.lockState = false;
             _door.doorState = false;
             _chargeControl.Connected = false;
+
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
             _display.Received(1).ViewFailedConnection();
@@ -135,6 +137,7 @@ namespace Test_Hand_in_2_Team12
             _door.lockState = false;
             _door.doorState = false;
             _chargeControl.Connected = true;
+
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = id });
 
             

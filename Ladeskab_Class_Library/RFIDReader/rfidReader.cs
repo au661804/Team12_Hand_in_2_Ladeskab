@@ -11,10 +11,8 @@ namespace Ladeskab_Class_Library
         
         public void RFIDValue(int id)
         {
-            
             OnRFIDHandle(new RFIDEventArgs(){_ID = id});
             
-
         }
 
         private void OnRFIDHandle(RFIDEventArgs e)
