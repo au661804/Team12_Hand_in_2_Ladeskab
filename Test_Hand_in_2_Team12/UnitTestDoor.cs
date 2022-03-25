@@ -53,27 +53,7 @@ namespace Test_Hand_in_2_Team12
             Assert.That(uut.doorState, Is.False);
         
         }
-
-        //Her forventes ikke at ske noget.
-        [TestCase(false)]
-        public void Doorstate_equalto_doorstate_OndoorChanged_Is_Not_Called_false(bool door)
-        {
-            uut.doorState = door;
-
-            uut.OnDoorClosed();
-            
-        }
-
-        //Her forventes ikke at ske noget.
-        [TestCase(true)]
-        public void Doorstate_equalto_doorstate_OndoorChanged_Is_Not_Called_true(bool door)
-        {
-            uut.doorState = door;
-
-            uut.OnDoorOpen();
-            
-        }
-
+        
 
     }
 }

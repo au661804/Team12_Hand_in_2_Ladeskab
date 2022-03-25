@@ -168,6 +168,7 @@ namespace Test_Hand_in_2_Team12
             _door.doorState = door;
             
             _rFIDReader.RFIDHandleEvent += Raise.EventWith(new RFIDEventArgs { _ID = 1 });
+
         }
         
 

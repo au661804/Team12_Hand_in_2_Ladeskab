@@ -9,19 +9,9 @@ namespace Ladeskab_Class_Library
     {
         private IDisplay _display;
         private IUsbCharger _charger;
-        public event EventHandler<CurrentEventArgs> USBEvent;
         double CurrentNow { get; set; }
-        double StopLadestroem = 5;
-        double NormalLadestroem = 500;
-        double Kortslutning = 501;
-
         public bool Connected { get;set; }
 
-        private enum ChargerState
-        {
-            Charging,
-            DoneCharging         
-        };
 
         public ChargeControl(IUsbCharger charger, IDisplay display)
         {
@@ -57,7 +47,6 @@ namespace Ladeskab_Class_Library
             }
         }
         
-
         public void StartCharge()
         {
             _charger.StartCharge();
